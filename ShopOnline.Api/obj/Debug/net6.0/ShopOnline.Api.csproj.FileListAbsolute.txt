@@ -80,3 +80,5 @@ E:\My Project\Blazor\ShopOnlineSolution\ShopOnline.Api\obj\Debug\net6.0\refint\S
 E:\My Project\Blazor\ShopOnlineSolution\ShopOnline.Api\obj\Debug\net6.0\ShopOnline.Api.pdb
 E:\My Project\Blazor\ShopOnlineSolution\ShopOnline.Api\obj\Debug\net6.0\ShopOnline.Api.genruntimeconfig.cache
 E:\My Project\Blazor\ShopOnlineSolution\ShopOnline.Api\obj\Debug\net6.0\ref\ShopOnline.Api.dll
+E:\My Project\Blazor\ShopOnlineSolution\ShopOnline.Api\bin\Debug\net6.0\ShopOnline.Models.dll
+E:\My Project\Blazor\ShopOnlineSolution\ShopOnline.Api\bin\Debug\net6.0\ShopOnline.Models.pdb

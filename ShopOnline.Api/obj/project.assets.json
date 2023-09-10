@@ -1242,6 +1242,16 @@
             "rid": "win"
           }
         }
+      },
+      "ShopOnline.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ShopOnline.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ShopOnline.Models.dll": {}
+        }
       }
     }
   },
@@ -3712,6 +3722,11 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "ShopOnline.Models/1.0.0": {
+      "type": "project",
+      "path": "../ShopOnline.Models/ShopOnline.Models.csproj",
+      "msbuildProject": "../ShopOnline.Models/ShopOnline.Models.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -3719,6 +3734,7 @@
       "Microsoft.EntityFrameworkCore >= 7.0.10",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.10",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.10",
+      "ShopOnline.Models >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.2.3"
     ]
   },
@@ -3755,7 +3771,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "E:\\My Project\\Blazor\\ShopOnlineSolution\\ShopOnline.Models\\ShopOnline.Models.csproj": {
+              "projectPath": "E:\\My Project\\Blazor\\ShopOnlineSolution\\ShopOnline.Models\\ShopOnline.Models.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
