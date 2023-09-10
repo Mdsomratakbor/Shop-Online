@@ -21,7 +21,7 @@ namespace ShopOnline.Api.Repositories
 
         public async Task<ProductCategory> GetCategory(int id)
         {
-            return await context.ProductCategories.Where(x => x.Id == id).FirstOrDefaultAsync();
+            return await context.ProductCategories.SingleOrDefaultAsync(x=>x.Id == id);
         }
 
         public async Task<IEnumerable<Product>> GetProducts()
@@ -32,7 +32,7 @@ namespace ShopOnline.Api.Repositories
 
         public async Task<Product> GetProduct(int id)
         {
-            return await context.Products.Where(x => x.Id == id).FirstOrDefaultAsync();
+            return await context.Products.FindAsync(id);
         }
     }
 }
