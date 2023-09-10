@@ -813,3 +813,12 @@ E:\My Project\Blazor\ShopOnlineSolution\ShopOnline.Web\obj\Debug\net6.0\ShopOnli
 E:\My Project\Blazor\ShopOnlineSolution\ShopOnline.Web\obj\Debug\net6.0\refint\ShopOnline.Web.dll
 E:\My Project\Blazor\ShopOnlineSolution\ShopOnline.Web\obj\Debug\net6.0\ShopOnline.Web.pdb
 E:\My Project\Blazor\ShopOnlineSolution\ShopOnline.Web\obj\Debug\net6.0\ref\ShopOnline.Web.dll
+E:\My Project\Blazor\ShopOnlineSolution\ShopOnline.Web\bin\Debug\net6.0\wwwroot\_framework\ShopOnline.Models.dll
+E:\My Project\Blazor\ShopOnlineSolution\ShopOnline.Web\bin\Debug\net6.0\wwwroot\_framework\ShopOnline.Models.pdb
+E:\My Project\Blazor\ShopOnlineSolution\ShopOnline.Web\bin\Debug\net6.0\wwwroot\_framework\ShopOnline.Models.pdb.gz
+E:\My Project\Blazor\ShopOnlineSolution\ShopOnline.Web\bin\Debug\net6.0\wwwroot\_framework\ShopOnline.Models.dll.gz
+E:\My Project\Blazor\ShopOnlineSolution\ShopOnline.Web\bin\Debug\net6.0\ShopOnline.Models.dll
+E:\My Project\Blazor\ShopOnlineSolution\ShopOnline.Web\bin\Debug\net6.0\ShopOnline.Models.pdb
+E:\My Project\Blazor\ShopOnlineSolution\ShopOnline.Web\obj\Debug\net6.0\build-gz\S+0Gy9Ac.gz
+E:\My Project\Blazor\ShopOnlineSolution\ShopOnline.Web\obj\Debug\net6.0\build-gz\GRsCthgd.gz
+E:\My Project\Blazor\ShopOnlineSolution\ShopOnline.Web\obj\Debug\net6.0\scopedcss\Pages\DisplayProducts.razor.rz.scp.css
