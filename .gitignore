@@ -3,3 +3,4 @@ obj
 /.vs/ShopOnlineSolution/v17/*.suo
 /ShopOnline.Web/bin
 /ShopOnline.Web/obj
+/*.vs
