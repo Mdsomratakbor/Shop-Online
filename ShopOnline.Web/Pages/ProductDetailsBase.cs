@@ -8,10 +8,11 @@ namespace ShopOnline.Web.Pages
     {
         [Parameter]
         public int Id { get; set; }
-        public IProductService ProductService { get; set; }
-        public ProductDto Product { get; set; }
-        public string ErrorMessage { get; set; }
-        protected override async void OnInitialized()
+        [Inject]
+        public IProductService? ProductService { get; set; }
+        public ProductDto? Product { get; set; }
+        public string? ErrorMessage { get; set; }
+        protected override async Task OnInitializedAsync()
         {
             try
             {
