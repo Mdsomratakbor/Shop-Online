@@ -12,7 +12,10 @@ namespace ShopOnline.Web.Pages
         public IProductService? ProductService { get; set; }
 
         [Inject]
-        public IShoppingService? ShoppingService { get; set; }
+        public IShoppingCartService? ShoppingService { get; set; }
+
+        [Inject]
+        public NavigationManager NavigationManager { get; set; }
         public ProductDto? Product { get; set; }
         public string? ErrorMessage { get; set; }
         protected override async Task OnInitializedAsync()
@@ -31,6 +34,7 @@ namespace ShopOnline.Web.Pages
             try
             {
                 var carItemDto = await ShoppingService.AddItem(cartItemToAddDto);
+                NavigationManager.NavigateTo("/ShoppingCart");
             }
             catch (Exception)
             {

@@ -4,7 +4,7 @@ using System.Net.Http.Json;
 
 namespace ShopOnline.Web.Services
 {
-    public class ShoppingService : IShoppingService
+    public class ShoppingService : IShoppingCartService
     {
         private readonly HttpClient httpClient;
 
@@ -41,7 +41,7 @@ namespace ShopOnline.Web.Services
         {
             try
             {
-                var response = await httpClient.GetAsync($"api/{userId}/GetItems");
+                var response = await httpClient.GetAsync($"api/ShoppingCart/{userId}/GetItems");
                 if (response.IsSuccessStatusCode)
                 {
                     if(response.StatusCode == System.Net.HttpStatusCode.NoContent)

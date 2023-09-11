@@ -60,7 +60,7 @@ namespace ShopOnline.Api.Controllers
             }
             catch (Exception)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, "Error retrieving data from the database");
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error retriving data from the database");
             }
         }
 
