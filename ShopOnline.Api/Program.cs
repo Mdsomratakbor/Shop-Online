@@ -17,6 +17,7 @@ builder.Services.AddDbContextPool<ShopOnlineDbContext>(options =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped<IShoppingCartRepository, ShoppingCartRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

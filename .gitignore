@@ -4,3 +4,4 @@ obj
 /ShopOnline.Web/bin
 /ShopOnline.Web/obj
 /*.vs
+*.vsidx
