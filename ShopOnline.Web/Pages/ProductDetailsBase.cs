@@ -10,6 +10,9 @@ namespace ShopOnline.Web.Pages
         public int Id { get; set; }
         [Inject]
         public IProductService? ProductService { get; set; }
+
+        [Inject]
+        public IShoppingService? ShoppingService { get; set; }
         public ProductDto? Product { get; set; }
         public string? ErrorMessage { get; set; }
         protected override async Task OnInitializedAsync()
@@ -21,6 +24,17 @@ namespace ShopOnline.Web.Pages
             catch (Exception ex)
             {
                 ErrorMessage = ex.Message;
+            }
+        }
+        protected async Task AddToCart_Click(CartItemToAddDto cartItemToAddDto)
+        {
+            try
+            {
+                var carItemDto = await ShoppingService.AddItem(cartItemToAddDto);
+            }
+            catch (Exception)
+            {
+
             }
         }
     }
