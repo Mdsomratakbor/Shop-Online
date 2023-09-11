@@ -26,7 +26,7 @@ namespace ShopOnline.Api.Controllers
             try
             {
                 var cartItems = await this.shoppingCartRepository.GetItems(userId);
-              
+
                 if (cartItems == null)
                 {
                     return NoContent();
@@ -35,8 +35,8 @@ namespace ShopOnline.Api.Controllers
                 {
 
                     var products = await productRepository.GetProducts();
-                    
-                    if(products == null)
+
+                    if (products == null)
                     {
                         throw new Exception("No products exist in the system");
                     }
@@ -83,17 +83,39 @@ namespace ShopOnline.Api.Controllers
             try
             {
                 var newCartItem = await this.shoppingCartRepository.AddItem(cartItemToAddDto);
-                if(newCartItem == null)
+                if (newCartItem == null)
                 {
                     return NoContent();
                 }
                 var product = await productRepository.GetProduct(newCartItem.ProductId);
-                if(product == null)
+                if (product == null)
                 {
                     throw new Exception($"Something went wrong when attempting to retrieve product (productId:({cartItemToAddDto.ProductId}))");
                 }
                 var newCartItemDto = newCartItem.ConvertToDto(product);
-                return CreatedAtAction(nameof(GetItem), new {id = newCartItemDto.Id}, newCartItemDto);
+                return CreatedAtAction(nameof(GetItem), new { id = newCartItemDto.Id }, newCartItemDto);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
+
+        [HttpDelete("{id:int}")]
+        public async Task<ActionResult<CartItemDto>> DeleteItem(int id)
+        {
+            try
+            {
+                var cartItem = await shoppingCartRepository.DeleteItem(id);
+                if (cartItem == null)
+                {
+                    return NotFound();
+                }
+                var product = await productRepository.GetProduct(cartItem.ProductId);
+                if (product == null)
+                    return NotFound();
+                var cartItemDto = cartItem.ConvertToDto(product);
+                return Ok(cartItemDto);
             }
             catch (Exception ex)
             {
