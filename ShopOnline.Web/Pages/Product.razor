@@ -1,7 +1,8 @@
 ﻿
 @page "/"
-@inherits ProductBase
 
+@inherits ProductBase
+@attribute [Authorize]
 @if(Products == null)
 {
     <DisplaySpinner />

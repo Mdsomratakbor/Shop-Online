@@ -12,15 +12,16 @@ namespace ShopOnline.Models.Dtos
         [Required]
         [EmailAddress]
         public string Email { get; set; }
-
-        [Required]
-        [StringLength(100, MinimumLength = 6)]
-        public string Password { get; set; }
-
         [Required]
         public string FirstName { get; set; }
 
         [Required]
         public string LastName { get; set; }
+        [Required]
+        [MinLength(6, ErrorMessage = "Password must be at least 6 characters.")]
+        public string Password { get; set; }
+        [Required]
+        [Compare("Password", ErrorMessage = "Passwords do not match.")]
+        public string ConfirmPassword { get; set; }
     }
 }
