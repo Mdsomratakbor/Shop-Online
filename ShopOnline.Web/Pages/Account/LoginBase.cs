@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using BlazorBootstrap;
+using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
 using ShopOnline.Models.Dtos;
 using ShopOnline.Web.Services.Contracts;
@@ -24,7 +25,7 @@ namespace ShopOnline.Web.Pages.Account
                 if (result.IsAuthSuccessful)
                 {
 
-                    NavigationManager.NavigateTo("/Product");
+                    NavigationManager.NavigateTo("/");
                 }
                 else
                 {
@@ -49,5 +50,21 @@ namespace ShopOnline.Web.Pages.Account
 
 
 
-    }
+        protected List<ToastMessage> messages = new List<ToastMessage>();
+
+        protected void ShowMessage(ToastType toastType) => messages.Add(CreateToastMessage(toastType));
+
+        private ToastMessage CreateToastMessage(ToastType toastType)
+        => new ToastMessage
+        {
+            Type = toastType,
+            Title = "Blazor Bootstrap",
+            HelpText = $"{DateTime.Now}",
+            Message = $"Hello, world! This is a toast message. DateTime: {DateTime.Now}",
+        };
+    
+
+
+
+}
 }
