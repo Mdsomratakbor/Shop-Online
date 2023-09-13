@@ -1,0 +1,68 @@
+﻿@page "/registration"
+@inherits RegisterationBase
+@layout AccountLayout
+
+
+<div class="col-md-12 col-lg-12 col-xl-12 order-2 order-lg-1">
+
+    <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
+
+    <EditForm class="mx-1 mx-md-4" Model="@registrationModel" OnValidSubmit="HandleRegistration">
+        <DataAnnotationsValidator />
+        <div class="d-flex flex-row align-items-center mb-4">
+            <i class="bi bi-person me-3"></i>
+            <div class="form-outline flex-fill mb-0">
+                <input type="text" id="form3Example1c" @bind="registrationModel.FirstName" class="form-control" />
+                <label class="form-label" for="form3Example1c">First Name</label>
+            </div>
+            <ValidationMessage For="@(() => registrationModel.FirstName)" />
+        </div>
+        <div class="d-flex flex-row align-items-center mb-4">
+            <i class="bi bi-person me-3"></i>
+            <div class="form-outline flex-fill mb-0">
+                <input type="text" id="form3Example1c" @bind="registrationModel.LastName" class="form-control" />
+                <label class="form-label" for="form3Example1c">Last Name</label>
+            </div>
+            <ValidationMessage For="@(() => registrationModel.LastName)" />
+        </div>
+
+        <div class="d-flex flex-row align-items-center mb-4">
+            <i class="bi bi-envelope me-3"></i>
+            <div class="form-outline flex-fill mb-0">
+                <input type="email" id="form3Example3c" @bind="registrationModel.Email" class="form-control" />
+                <label class="form-label" for="form3Example3c">Email</label>
+            </div>
+            <ValidationMessage For="@(() => registrationModel.Email)" />
+        </div>
+
+        <div class="d-flex flex-row align-items-center mb-4">
+            <i class="bi bi-lock me-3"></i>
+            <div class="form-outline flex-fill mb-0">
+                <input type="password" id="form3Example4c" @bind="registrationModel.Password" class="form-control" />
+                <label class="form-label" for="form3Example4c">Password</label>
+            </div>
+            <ValidationMessage For="@(() => registrationModel.Password)" />
+        </div>
+
+        <div class="d-flex flex-row align-items-center mb-4">
+            <i class="bi bi-lock me-3"></i>
+            <div class="form-outline flex-fill mb-0">
+                <input type="password" id="form3Example4cd" @bind="registrationModel.ConfirmPassword" class="form-control" />
+                <label class="form-label" for="form3Example4cd">Repeat your password</label>
+            </div>
+            <ValidationMessage For="@(() => registrationModel.ConfirmPassword)" />
+        </div>
+
+        <div class="form-check d-flex justify-content-center mb-5">
+            <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" />
+            <label class="form-check-label" for="form2Example3">
+                I agree all statements in <a href="#!">Terms of service</a>
+            </label>
+        </div>
+
+        <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+            <button type="submit" class="btn btn-primary btn-lg">Register</button>
+        </div>
+
+    </EditForm>
+</div>
