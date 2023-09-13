@@ -16,19 +16,28 @@ namespace ShopOnline.Web.Pages.Account
         public string ErrorMessage { get; set; }
         protected async Task HandleLogin()
         {
-            // Call your authentication service or API to perform user login
-            var result = await UserService.LoginAsync(loginModel);
+            try{
 
-            if (result.IsAuthSuccessful)
-            {
-                
-                NavigationManager.NavigateTo("/Product");
+                // Call your authentication service or API to perform user login
+                var result = await UserService.LoginAsync(loginModel);
+
+                if (result.IsAuthSuccessful)
+                {
+
+                    NavigationManager.NavigateTo("/Product");
+                }
+                else
+                {
+                    // Display an error message to the user
+                    ErrorMessage = "Invalid credentials. Please try again.";
+                }
             }
-            else
+            catch(Exception ex)
             {
-                // Display an error message to the user
-                ErrorMessage = "Invalid credentials. Please try again.";
+                ErrorMessage = ex.Message;
+                Console.WriteLine(ex.Message);
             }
+            
         }
 
         private async Task Logout()

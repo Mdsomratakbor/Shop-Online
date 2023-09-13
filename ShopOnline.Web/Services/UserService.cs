@@ -18,10 +18,11 @@ namespace ShopOnline.Web.Services
         public UserService(HttpClient httpClient, AuthenticationStateProvider authenticationStateProvider, ILocalStorageService localStorage)
         {
             this.httpClient=httpClient;
-            localStorage = localStorage;
+            this._authenticationStateProvider=authenticationStateProvider;
+            this.localStorage=localStorage;
         }
 
-       public async Task<int> RegisterAsync(UserRegistrationDto userRegistrationDto)
+        public async Task<int> RegisterAsync(UserRegistrationDto userRegistrationDto)
         {
             try
             {

@@ -1,5 +1,6 @@
 ﻿using ShopOnline.Models.Dtos;
 using ShopOnline.Web.Services.Contracts;
+using System.Net.Http.Headers;
 using System.Net.Http.Json;
 
 namespace ShopOnline.Web.Services
@@ -11,6 +12,8 @@ namespace ShopOnline.Web.Services
         public ProductService(HttpClient httpClient)
         {
             this.httpClient=httpClient;
+            //httpClient.DefaultRequestHeaders.Accept.Clear();
+            //httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
         public async Task<ProductDto> GetProductById(int id)
@@ -59,8 +62,9 @@ namespace ShopOnline.Web.Services
                     throw new Exception(message);
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                Console.Write(ex.Message);
                 throw;
             }
         }
