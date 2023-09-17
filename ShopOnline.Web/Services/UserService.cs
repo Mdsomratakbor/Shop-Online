@@ -62,7 +62,7 @@ namespace ShopOnline.Web.Services
 
             await localStorage.SaveStringAsync("authToken", loginResult!.AccessToken);
             ((CustomAuthStateProvider)_authenticationStateProvider).MarkUserAsAuthenticated(loginModel.Email!);
-            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", loginResult.AccessToken);
+         //   httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", loginResult.AccessToken);
             return loginResult;
         }
 

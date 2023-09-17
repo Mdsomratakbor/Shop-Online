@@ -58,6 +58,7 @@ builder.Services.AddScoped<IShoppingCartRepository, ShoppingCartRepository>();
 builder.Services.AddMemoryCache();
 // Register the RefreshTokenService
 builder.Services.AddScoped<IRefreshTokenService, RefreshTokenService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

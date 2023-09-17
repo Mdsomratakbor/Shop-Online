@@ -1,6 +1,10 @@
 ﻿@page "/login"
 @inherits LoginBase
 @layout AccountLayout
+
+<Toasts class="p-3" Messages="messages" AutoHide="true" Delay="6000" Placement="ToastsPlacement.TopRight" />
+
+<Button Color="ButtonColor.Primary" @onclick="() => ShowMessage(ToastType.Primary)">Primary Toast</Button>
 <EditForm Model="@loginModel" OnValidSubmit="HandleLogin">
 
 '

@@ -4,7 +4,6 @@ using ShopOnline.Web;
 using ShopOnline.Web.Services;
 using ShopOnline.Web.Services.Contracts;
 using Microsoft.AspNetCore.Components.Authorization;
-using BlazorBootstrap;
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");
@@ -16,4 +15,5 @@ builder.Services.AddScoped<AuthenticationStateProvider, CustomAuthStateProvider>
 builder.Services.AddTransient<ILocalStorageService,  LocalStorageService>();
 builder.Services.AddAuthorizationCore();
 builder.Services.AddBlazorBootstrap();
+builder.Services.AddBootstrapComponents();
 await builder.Build().RunAsync();

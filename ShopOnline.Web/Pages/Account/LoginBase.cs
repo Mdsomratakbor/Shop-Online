@@ -14,6 +14,8 @@ namespace ShopOnline.Web.Pages.Account
         public IUserService UserService { get; set; }
         [Inject]
         public NavigationManager NavigationManager { get; set; }
+        [Inject] 
+        protected ToastService ToastService { get; set; }
         public string ErrorMessage { get; set; }
         protected async Task HandleLogin()
         {
@@ -24,11 +26,13 @@ namespace ShopOnline.Web.Pages.Account
 
                 if (result.IsAuthSuccessful)
                 {
-
+                    ToastService.Notify(new(ToastType.Success, $"Employee details saved successfully."));
                     NavigationManager.NavigateTo("/");
                 }
                 else
                 {
+
+                    ToastService.Notify(new(ToastType.Danger, $"Error: {ex.Message}."));
                     // Display an error message to the user
                     ErrorMessage = "Invalid credentials. Please try again.";
                 }
