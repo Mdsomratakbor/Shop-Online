@@ -32,7 +32,7 @@ namespace ShopOnline.Web.Pages.Account
                 else
                 {
 
-                    ToastService.Notify(new(ToastType.Danger, $"Error: {ex.Message}."));
+                 
                     // Display an error message to the user
                     ErrorMessage = "Invalid credentials. Please try again.";
                 }
@@ -40,6 +40,7 @@ namespace ShopOnline.Web.Pages.Account
             catch(Exception ex)
             {
                 ErrorMessage = ex.Message;
+                ToastService.Notify(new(ToastType.Danger, $"Error: {ex.Message}."));
                 Console.WriteLine(ex.Message);
             }
             
