@@ -8,12 +8,27 @@ namespace ShopOnline.Web.Pages
     {
         [Inject]
         public IProductService ProductService { get; set; }
+        [Inject]
+        public IShoppingCartService ShoppingCartService { get; set; }
 
         public IEnumerable<ProductDto> Products { get; set; }
 
+        public string ErrorMessage { get; set; }
         protected override async Task OnInitializedAsync()
         {
-            Products = await ProductService.GetProducts();
+            try
+            {
+                Products = await ProductService.GetProducts();
+                var shoppingCartItems = await ShoppingCartService.GetItems(HardCoded.UserId);
+                var totalQty = shoppingCartItems.Sum(i => i.Qty);
+
+                ShoppingCartService.RaiseEventOnShopppingCartChanged(totalQty);
+            }
+            catch (Exception ex)
+            {
+                ErrorMessage = ex.Message;
+            }
+       
         }
 
 
@@ -28,5 +43,7 @@ namespace ShopOnline.Web.Pages
         {
             return groupProductDtos.FirstOrDefault(pg => pg.CategoryId == groupProductDtos.Key).CategoryName;
         }
+
+
     }
 }
