@@ -5,3 +5,4 @@ obj
 /ShopOnline.Web/obj
 /*.vs
 *.vsidx
+/.vs/ShopOnlineSolution/DesignTimeBuild/.dtbcache.v2
